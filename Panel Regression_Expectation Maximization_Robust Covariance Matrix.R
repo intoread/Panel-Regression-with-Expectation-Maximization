@@ -1,5 +1,6 @@
 #inputing original dataset
 data_panel <- read.csv(file.choose())
+data_panel <- data_panel[,c(1:4,6)]
 
 library(Amelia)
 library(plm)
@@ -16,7 +17,7 @@ for (i in 1:nimp) {
 }
 
 ##inputing full dataset with imputed values
-panel_diff <- na.omit(readxl::read_excel("C:\\Users\\intor\\Documents\\panel diff.xlsx"))[,-1]
+panel_diff <- na.omit(readxl::read_excel(file.choose()))[,-1]
 panel_diff
 
 
